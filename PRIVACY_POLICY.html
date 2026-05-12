@@ -79,9 +79,31 @@
 
   <h2>4. In-App Purchases and Subscription Management</h2>
   <p>
-    U-Manager offers optional paid features or subscriptions processed through the platform store (Google Play or App Store).
-    To manage subscriptions, validate purchases, and restore entitlements, we use <strong>RevenueCat</strong>
-    (<a href="https://www.revenuecat.com" target="_blank">revenuecat.com</a>), a third-party service.
+    U-Manager offers optional paid features or subscriptions. Purchases are processed by the platform store (Google Play or App Store) — we never see your payment details.
+  </p>
+  <p>
+    Like any app with in-app purchases, an anonymous identifier is stored to remember what you have bought, so you can restore your purchases at any time without paying again. This is the same mechanism used by every app on the App Store or Google Play.
+    We use <strong>RevenueCat</strong> (<a href="https://www.revenuecat.com" target="_blank">revenuecat.com</a>) to manage this, which receives only an anonymous ID, your purchase receipt, and the app version — nothing that identifies you personally.
+    You can review RevenueCat's privacy policy at
+    <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a>.
+  </p>
+
+  <h2>5. Push Notifications (Optional Feature)</h2>
+  <p>
+    U-Manager offers optional push notifications to alert you about events on your Unraid server. This feature is entirely opt-in and can be enabled or disabled at any time from the app's settings.
+  </p>
+  <p>
+    Push notifications work the same way in every app on your phone: the operating system assigns your device a delivery token — a random code with no connection to your identity — and that token is used to route the notification to the right device. Without it, there is no way for any app to deliver push notifications.
+  </p>
+  <p>
+    This token is stored solely to forward notifications triggered by your own Unraid server to your device.
+    No other data is transmitted. When you disable push notifications, the token is deleted.
+  </p>
+  <p>
+    The delivery infrastructure uses <strong>Firebase Cloud Messaging</strong> (Google) and <strong>Cloudflare Workers</strong>.
+    You can review their privacy policies at
+    <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a> and
+    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">cloudflare.com/privacypolicy</a>.
   </p>
   <p>
     RevenueCat may collect and process the following data on our behalf:
